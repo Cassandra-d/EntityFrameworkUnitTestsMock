@@ -3,6 +3,7 @@ using Moq;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 
 namespace EntityFrameworkUnitTestsMock
 {
@@ -19,16 +20,16 @@ namespace EntityFrameworkUnitTestsMock
 
             var posts = new List<Post>
             {
-                new Post() { Id = Guid.NewGuid(), Body ="QWERTY" },
-                new Post() { Id = Guid.NewGuid(), Body = "ASDFGH" },
-                new Post() { Id = Guid.NewGuid(), Body = "ZXCVBN" }
+                new Post() { Id = Guid.NewGuid(), Body ="QWERTY", BlogId = blogs.ElementAt(0).Id, Blog = blogs.ElementAt(0)},
+                new Post() { Id = Guid.NewGuid(), Body = "ASDFGH", BlogId = blogs.ElementAt(1).Id, Blog = blogs.ElementAt(1)},
+                new Post() { Id = Guid.NewGuid(), Body = "ZXCVBN", BlogId = blogs.ElementAt(2).Id, Blog = blogs.ElementAt(2)}
             };
 
             var comments = new List<Comment>
             {
-                new Comment() { Id = Guid.NewGuid(), Body = "1234" },
-                new Comment() { Id = Guid.NewGuid(), Body = "5678" },
-                new Comment() { Id = Guid.NewGuid(), Body = "90" }
+                new Comment() { Id = Guid.NewGuid(), Body = "1234", PostId = posts.ElementAt(0).Id, Post = posts.ElementAt(0) },
+                new Comment() { Id = Guid.NewGuid(), Body = "5678", PostId = posts.ElementAt(1).Id, Post = posts.ElementAt(1) },
+                new Comment() { Id = Guid.NewGuid(), Body = "90", PostId = posts.ElementAt(2).Id, Post = posts.ElementAt(2) }
             };
 
             var setBlog = new Mock<DbSet<Blog>>().SetupData(blogs);

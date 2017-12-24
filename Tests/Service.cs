@@ -15,8 +15,8 @@ namespace Tests
         }
         public async Task<string> UseInclude()
         {
-            var bodies = await _ctx.Posts.Include(p => p.Comments).Select(p => p.Body).ToListAsync();
-            return bodies.FirstOrDefault() ?? string.Empty;
+            var posts = await _ctx.Posts.Include(p => p.Comments).Include(p => p.Blog).ToListAsync();
+            return posts.FirstOrDefault().Body ?? string.Empty;
         }
     }
 }
