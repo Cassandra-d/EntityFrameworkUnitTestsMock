@@ -1,11 +1,8 @@
-﻿using EntityFrameworkUnitTestsMock;
+﻿using EF;
+using EntityFrameworkUnitTestsMock;
 using Moq;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Threading.Tasks;
-using Tests.Entities;
 
 namespace Tests
 {
@@ -16,7 +13,11 @@ namespace Tests
         {
 
             var (b, p, c) = SetHelper.GetBasicData();
-            // var ctx =
+            var ctx = new Mock<Context>();
+
+            ctx.Setup(_ => _.Blogs).Returns(b.Object);
+            ctx.Setup(_ => _.Posts).Returns(p.Object);
+            ctx.Setup(_ => _.Comments).Returns(c.Object);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
+using EF;
 
 namespace Tests
 {

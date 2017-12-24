@@ -67,11 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context.cs" />
     <Compile Include="ContextTests.cs" />
-    <Compile Include="Entities\Blog.cs" />
-    <Compile Include="Entities\Comment.cs" />
-    <Compile Include="Entities\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
   </ItemGroup>
