@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tests.Entities
+namespace EF.Entities
 {
     public class Comment
     {

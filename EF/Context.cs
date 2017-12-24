@@ -1,7 +1,7 @@
-﻿using System.Data.Entity;
-using Tests.Entities;
+﻿using EF.Entities;
+using System.Data.Entity;
 
-namespace Tests
+namespace EF
 {
     public class Context : DbContext
     {

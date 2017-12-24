@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Tests.Entities
+namespace EF.Entities
 {
     public class Post
     {
